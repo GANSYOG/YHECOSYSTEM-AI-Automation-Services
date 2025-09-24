@@ -1,267 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YH EcoSystem - AI & Automation Services | Your Vision, Our Code</title>
-    <meta name="description" content="YH EcoSystem provides intelligent automation and AI solutions for smart homes, businesses, and custom software development. From Smart Homes to Smart Ads - we do it all.">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>YH EcoSystem - Your Vision, Our Code</title>
+    <link rel="stylesheet" href="style.css" />
+    <meta name="description" content="YH EcoSystem - Intelligent Living, Simplified. From Smart Homes to Smart Ads, we provide AI services, home automation, and business solutions." />
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <nav class="nav">
-            <div class="nav-brand">
-                <h1 class="brand-name">YH EcoSystem</h1>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#services" class="nav-link">Services</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
+<header class="header">
+    <nav class="nav container">
+        <div class="nav__brand"><h3>YH EcoSystem</h3></div>
+        <ul class="nav__menu">
+            <li><a href="#home" class="nav__link">Home</a></li>
+            <li><a href="#services" class="nav__link">Services</a></li>
+            <li><a href="#about" class="nav__link">About</a></li>
+            <li><a href="#contact" class="nav__link">Contact</a></li>
+        </ul>
+        <button class="nav__toggle" aria-label="Toggle navigation">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+</header>
+
+<section id="home" class="hero container">
+    <div class="hero__text">
+        <h1>YH EcoSystem</h1>
+        <p class="tagline">Your Vision, Our Code</p>
+        <p class="mission">Intelligent Living, Simplified</p>
+        <p class="description">From Smart Homes to Smart Ads - YH EcoSystem does it all</p>
+        <div class="btn-group">
+            <button class="btn btn-primary">Get Started</button>
+            <button class="btn btn-outline" onclick="openChatbot()">Live Demo</button>
+            <button class="btn btn-secondary">Book Consultation</button>
+        </div>
+    </div>
+    <div class="hero__image-container">
+        <img src="assets/image1.jpeg" alt="AI Brain Image" class="hero__image"/>
+    </div>
+</section>
+
+<section id="services" class="services container">
+    <h2>Our Services</h2>
+    <div class="service-cards">
+        <div class="service-card">
+            <img src="assets/image2.jpeg" alt="AI Services" />
+            <h3>AI Services</h3>
+            <ul>
+                <li>Bespoke Apps & Software (Vibe Coding)</li>
+                <li>Custom GPT Agents: AI-assisted business processes</li>
+                <li>AI Powered Content & Professional Shoots</li>
+                <li>AR/VR Immersive Experiences</li>
             </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </nav>
-    </header>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1 class="hero-title">Your Vision, Our Code</h1>
-                <h2 class="hero-subtitle">Intelligent Living, Simplified</h2>
-                <p class="hero-description">From Smart Homes to Smart Ads - YH EcoSystem does it all</p>
-                <a href="#contact" class="btn btn--primary btn--large">Get Started</a>
-            </div>
-            <div class="hero-image">
-                <img src="https://pplx-res.cloudinary.com/image/upload/v1754828341/pplx_project_search_images/81e1b3570b49909d6869997aed273ef1cbb8ad35.png" alt="AI Neural Network" class="hero-img">
-            </div>
         </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <div class="container">
-            <h2 class="section-title">Our Services</h2>
-            <div class="services-grid">
-                
-                <!-- AI Services -->
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <h3 class="service-title">AI Services</h3>
-                    <ul class="service-list">
-                        <li>Bespoke Apps & Software (Vibe Coding) development</li>
-                        <li>Custom GPT Agents: AI agents trained and software development</li>
-                        <li>Custom GPT Agents: AI assisted for your specific business processes</li>
-                        <li>AI Powered Content: content creation and professional product shoots</li>
-                        <li>AR/VR Solutions: Immersive AR/VR trainers and corporate experiences</li>
-                    </ul>
-                </div>
-
-                <!-- Home Automation -->
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-home"></i>
-                    </div>
-                    <h3 class="service-title">Home Automation (Fully Smart)</h3>
-                    <div class="automation-sections">
-                        <div class="automation-section">
-                            <h4>Hall</h4>
-                            <p>Lights, Fans, AC, Sound System, Projectors, Ambient Lighting, Massage Chairs</p>
-                        </div>
-                        <div class="automation-section">
-                            <h4>Bedroom</h4>
-                            <p>Lights, Fans, AC</p>
-                        </div>
-                        <div class="automation-section">
-                            <h4>Kitchen & Bathroom</h4>
-                            <p>Smart Fridge, Oven, Chimney, Electric Gas, Dryer, Dishwasher, Exhaust Fans, Smart Lighting</p>
-                        </div>
-                    </div>
-                    <img src="https://pplx-res.cloudinary.com/image/upload/v1758534550/pplx_project_search_images/58a7e5fea361949066599a0f0577fe817c3d257e.png" alt="Smart Home Dashboard" class="service-image">
-                </div>
-
-                <!-- Business Automation -->
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-building"></i>
-                    </div>
-                    <h3 class="service-title">Business Automation</h3>
-                    <p class="service-subtitle">Smarter Spaces, Smarter Business</p>
-                    <ul class="service-list">
-                        <li>Automated equipment (up to 32A)</li>
-                        <li>Dynamic HVAC & lighting systems</li>
-                        <li>Coffee, vending & washroom automation</li>
-                        <li>Tailored solutions for every business</li>
-                    </ul>
-                    <img src="https://pplx-res.cloudinary.com/image/upload/v1756201953/pplx_project_search_images/75a67077eff910438262ec1bd14861dedcd603b1.png" alt="Office Automation" class="service-image">
-                </div>
-
-                <!-- Vibe Coding Studio -->
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <h3 class="service-title">Vibe Coding Studio</h3>
-                    <p class="service-description">Just vibe your idea or a dream, or just for fun or serious business - let it be anything, you say it, we create it</p>
-                    <ul class="service-list">
-                        <li>Turn dreams & fun ideas into working apps, websites, or digital tools</li>
-                        <li>Prototype business projects quickly</li>
-                        <li>Creative coding space for experimental ideas</li>
-                        <li>Personal projects to serious startups, all supported</li>
-                    </ul>
-                </div>
-
-                <!-- EV Charging -->
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-charging-station"></i>
-                    </div>
-                    <h3 class="service-title">Next-Gen EV Charging</h3>
-                    <p class="service-description">Fast. Reliable. Intelligent charging for cars & bikes.</p>
-                    <div class="ev-features">
-                        <div class="feature">
-                            <i class="fas fa-bolt"></i>
-                            <span>Fast Charging</span>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-shield-alt"></i>
-                            <span>Reliable</span>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-microchip"></i>
-                            <span>Intelligent</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+        <div class="service-card">
+            <img src="assets/image3.jpeg" alt="Home Automation" />
+            <h3>Home Automation (Fully Smart)</h3>
+            <p>Transform your home into an intelligent ecosystem.</p>
         </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title">The YH Advantage</h2>
-            <div class="advantages-grid">
-                <div class="advantage-card">
-                    <div class="advantage-icon">
-                        <i class="fas fa-sync-alt"></i>
-                    </div>
-                    <h3>Unified 360° tech ecosystem</h3>
-                </div>
-                <div class="advantage-card">
-                    <div class="advantage-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>Secure & energy efficient</h3>
-                </div>
-                <div class="advantage-card">
-                    <div class="advantage-icon">
-                        <i class="fas fa-cogs"></i>
-                    </div>
-                    <h3>Fully customizable solutions</h3>
-                </div>
-                <div class="advantage-card">
-                    <div class="advantage-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>Affordable, scalable & future-ready</h3>
-                </div>
-            </div>
-            
-            <div class="ecosystem-info">
-                <h3>YH EcoSystem Integration</h3>
-                <div class="integration-points">
-                    <div class="integration-point">
-                        <i class="fas fa-link"></i>
-                        <span>Seamless integration of automation + AI</span>
-                    </div>
-                    <div class="integration-point">
-                        <i class="fas fa-home"></i>
-                        <span>Smarter, safer, and more efficient spaces</span>
-                    </div>
-                    <div class="integration-point">
-                        <i class="fas fa-globe"></i>
-                        <span>Personal, business, and mobility solutions covered</span>
-                    </div>
-                </div>
-            </div>
+        <div class="service-card">
+            <img src="assets/image4.jpeg" alt="Business Automation" />
+            <h3>Business Automation</h3>
+            <p>Smarter spaces, smarter business.</p>
         </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Ready to Get Smart?</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h3>Call Us</h3>
-                            <a href="tel:+919920233085" class="contact-link">+91 9920233085</a>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h3>Visit Us</h3>
-                            <p>Yoga Hub Studio</p>
-                            <p class="demo-text">Visit for a Live Demo</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="contact-cta">
-                    <a href="tel:+919920233085" class="btn btn--primary btn--large">Contact Now</a>
-                </div>
-            </div>
+        <div class="service-card">
+            <img src="assets/image5.jpeg" alt="Vibe Coding Studio" />
+            <h3>Vibe Coding Studio</h3>
+            <p>Turn ideas or dreams into working apps or tools.</p>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <h3>YH EcoSystem</h3>
-                    <p>Intelligent Living, Simplified</p>
-                </div>
-                <div class="footer-links">
-                    <div class="footer-section">
-                        <h4>Services</h4>
-                        <ul>
-                            <li><a href="#services">AI Services</a></li>
-                            <li><a href="#services">Home Automation</a></li>
-                            <li><a href="#services">Business Automation</a></li>
-                            <li><a href="#services">Vibe Coding</a></li>
-                            <li><a href="#services">EV Charging</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-section">
-                        <h4>Contact</h4>
-                        <p>Phone: <a href="tel:+919920233085">+91 9920233085</a></p>
-                        <p>Location: Yoga Hub Studio</p>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 YH EcoSystem. All rights reserved.</p>
-            </div>
+        <div class="service-card">
+            <img src="assets/image6.jpeg" alt="Next-Gen EV Charging" />
+            <h3>Next-Gen EV Charging</h3>
+            <p>Fast, reliable, intelligent charging for cars & bikes.</p>
         </div>
-    </footer>
+    </div>
+</section>
 
-    <script src="app.js"></script>
+<section id="roi" class="roi-calculator container">
+    <h2>Smart Home ROI Calculator</h2>
+    <form id="roiForm">
+        <label for="homeSize">Home Size (sq ft):</label>
+        <input type="number" id="homeSize" min="0" required />
+        <label for="energyBill">Average Monthly Energy Bill (INR):</label>
+        <input type="number" id="energyBill" min="0" required />
+        <button type="submit">Calculate</button>
+    </form>
+    <div id="roiResult">Your estimated savings: <span id="savings">-</span></div>
+    <img src="assets/image7.jpeg" alt="ROI Calculator Visual" />
+</section>
+
+<section id="builder-dashboard" class="dashboard container">
+    <h2>Builder Project Management Dashboard</h2>
+    <img src="assets/image8.jpeg" alt="Builder Dashboard" />
+</section>
+
+<section id="arvr" class="ar-vr container">
+    <h2>Architect AR/VR Collaboration</h2>
+    <img src="assets/image9.jpeg" alt="AR VR Workspace" />
+</section>
+
+<section id="testimonials" class="testimonials container">
+    <h2>Testimonials</h2>
+    <div class="testimonial">
+        <img src="assets/indian_client.jpeg" alt="Indian Client Testimonial" />
+        <blockquote>
+            “YH EcoSystem transformed our construction projects with smart automation.”
+            <footer>- Rajesh Kumar, Builder</footer>
+        </blockquote>
+    </div>
+    <div class="testimonial">
+        <img src="assets/image10.jpeg" alt="Architect Testimonial" />
+        <blockquote>
+            “AR/VR collaboration tools made presentations engaging.”
+            <footer>- Priya Sharma, Architect</footer>
+        </blockquote>
+    </div>
+    <div class="testimonial">
+        <img src="assets/image11.jpeg" alt="Home Owner Testimonial" />
+        <blockquote>
+            “Smart home installation exceeded expectations.”
+            <footer>- Amit Patel, Home Owner</footer>
+        </blockquote>
+    </div>
+</section>
+
+<section id="contact" class="contact container">
+    <h2>Contact Us</h2>
+    <p>Phone: +91 99202 33085</p>
+    <p>Location: Yoga Hub Studio</p>
+    <button onclick="openChatbot()">Live Chat</button>
+</section>
+
+<footer class="footer container">
+    <p>&copy; 2025 YH EcoSystem. All rights reserved.</p>
+</footer>
+
+<script src="app.js"></script>
 </body>
 </html>
