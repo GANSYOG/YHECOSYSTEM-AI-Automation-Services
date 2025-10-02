@@ -1177,6 +1177,57 @@ body {
   background: var(--yh-light);
 }
 
+.contact-form-container {
+  background: white;
+  padding: var(--space-32);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  width: 100%;
+  max-width: 500px;
+}
+
+.form-title {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+  text-align: center;
+  margin-bottom: var(--space-24);
+}
+
+.contact-form .form-control {
+  background-color: var(--color-bg-1);
+  border-color: var(--color-border);
+  color: var(--color-text);
+}
+
+.contact-form .form-control:focus {
+    border-color: var(--yh-primary);
+    box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.2);
+}
+
+.contact-form .form-control::placeholder {
+  color: var(--color-text-secondary);
+}
+
+.contact-form .btn {
+    background: var(--yh-gradient);
+    color: white;
+}
+
+.form-control.error {
+    border-color: var(--color-red-500);
+}
+
+.success-message {
+    background-color: var(--color-bg-3);
+    color: var(--color-success);
+    border: 1px solid var(--color-success);
+    padding: var(--space-12);
+    border-radius: var(--radius-base);
+    text-align: center;
+    margin-top: var(--space-16);
+}
+
 /* Footer */
 .footer {
   background: var(--yh-dark);

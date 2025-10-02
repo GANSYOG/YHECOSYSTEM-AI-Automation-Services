@@ -269,7 +269,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const successMessage = document.createElement('div');
                 successMessage.textContent = 'Thank you! We will get back to you soon.';
                 successMessage.className = 'success-message';
-                contactForm.appendChild(successMessage);
+                contactForm.parentElement.appendChild(successMessage);
                 
                 // Reset form
                 contactForm.reset();
