@@ -1,29 +1,29 @@
 :root {
   /* C O L O R S */
   /* background */
-  --bg-color: #050505;
-  --primary-color: #0a0a0a;
-  --secondary-color: #1a1a1a;
+  --bg-color: #f0f4f8;
+  --primary-color: #ffffff;
+  --secondary-color: #e2e8f0;
 
   /* accent colors */
-  --accent-color: #00ffcc;
-  --accent-glow: rgba(0, 255, 204, 0.4);
+  --accent-color: #0ea5e9; /* Light blue accent for contrast on light mode */
+  --accent-glow: rgba(14, 165, 233, 0.3);
 
   /* text */
-  --text-color: #ffffff;
-  --text-muted: #888888;
+  --text-color: #0f172a;
+  --text-muted: #475569;
 
   /* glassmorphism */
-  --glass-bg: rgba(255, 255, 255, 0.03);
-  --glass-border: rgba(255, 255, 255, 0.05);
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(0, 0, 0, 0.1);
 }
 
 .dark-theme {
-  /* We force dark theme, but keep variables just in case */
-  --bg-color: #050505;
-  --primary-color: #0a0a0a;
-  --secondary-color: #1a1a1a;
-  --text-color: #ffffff;
+  /* We force light theme based on user feedback, removing dark override */
+  --bg-color: #f0f4f8;
+  --primary-color: #ffffff;
+  --secondary-color: #e2e8f0;
+  --text-color: #0f172a;
 }
 
 .glass-panel {
@@ -93,7 +93,7 @@ img {
   align-items: center;
   justify-content: space-between;
   padding: 20px 80px;
-  background: rgba(10, 10, 10, 0.8);
+  background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--glass-border);
@@ -183,10 +183,10 @@ img {
   line-height: 1.1;
   letter-spacing: -1px;
   margin-bottom: 20px;
-  background: linear-gradient(180deg, #fff 0%, #aaa 100%);
+  background: linear-gradient(180deg, #0f172a 0%, #334155 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: 0 0 40px rgba(255, 255, 255, 0.1);
+  text-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
 }
 
 #hero .hero-content p {
@@ -219,13 +219,14 @@ img {
 
 .primary-btn {
   background: var(--accent-color);
-  color: #000;
+  color: #fff;
   box-shadow: 0 0 20px var(--accent-glow);
 }
 
 .primary-btn:hover {
-  background: #fff;
-  box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+  background: #000;
+  color: #fff;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
 }
 
 .secondary-btn {
@@ -237,7 +238,7 @@ img {
 
 .secondary-btn:hover {
   border-color: var(--text-color);
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(0, 0, 0, 0.05);
 }
 /* G L O B A L   S E C T I O N S */
 .section-padding {
@@ -246,7 +247,7 @@ img {
 }
 
 .bg-alt {
-  background: #080808;
+  background: #ffffff;
   border-top: 1px solid var(--glass-border);
   border-bottom: 1px solid var(--glass-border);
 }
@@ -285,7 +286,7 @@ img {
 .eco-node-center {
   padding: 20px 40px;
   background: var(--accent-color);
-  color: #000;
+  color: #fff;
   font-weight: 800;
   font-size: 1.2rem;
   border-radius: 50px;
@@ -319,8 +320,8 @@ img {
 
 .eco-module i {
   font-size: 2rem;
-  color: #fff;
-  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-color);
+  background: rgba(0, 0, 0, 0.05);
   padding: 20px;
   border-radius: 50%;
   border: 1px solid var(--glass-border);
@@ -329,7 +330,7 @@ img {
 
 .eco-module:hover i {
   background: var(--accent-color);
-  color: #000;
+  color: #fff;
   box-shadow: 0 0 20px var(--accent-glow);
 }
 
@@ -363,8 +364,9 @@ img {
   width: 300px;
   padding: 30px;
   z-index: 10;
-  background: rgba(10, 10, 10, 0.95);
+  background: rgba(255, 255, 255, 0.95);
   transition: opacity 0.3s ease, visibility 0.3s;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
 }
 
 .eco-info-panel.hidden {
@@ -399,7 +401,7 @@ img {
   right: 15px;
   background: none;
   border: none;
-  color: #fff;
+  color: var(--text-color);
   font-size: 1.5rem;
   cursor: pointer;
 }
@@ -448,7 +450,7 @@ img {
 .explore-link {
   font-size: 0.85rem;
   font-weight: 700;
-  color: #fff;
+  color: var(--accent-color);
   letter-spacing: 1px;
   margin-top: 10px;
   display: inline-block;
@@ -456,7 +458,7 @@ img {
 }
 
 .explore-link:hover {
-  color: var(--accent-color);
+  color: #000;
 }
 
 /* H O W   I T   W O R K S */
@@ -546,7 +548,8 @@ img {
   justify-content: center;
   font-weight: 800;
   font-size: 1.2rem;
-  color: var(--accent-color);
+  color: var(--text-color);
+  background: var(--accent-color);
   border: 2px solid var(--accent-color);
   box-shadow: 0 0 40px var(--accent-glow);
   z-index: 2;
@@ -559,7 +562,10 @@ img {
   border-radius: 20px;
   font-size: 0.85rem;
   font-weight: 600;
-  color: #fff;
+  color: var(--text-color);
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
   white-space: nowrap;
   animation: orbit 20s linear infinite;
   transform-origin: center;
@@ -793,11 +799,12 @@ img {
 .dashboard-wrapper {
   max-width: 900px;
   margin: 0 auto;
-  background: rgba(5, 5, 5, 0.8);
+  background: rgba(255, 255, 255, 0.8);
   border: 1px solid var(--glass-border);
   border-radius: 12px;
   overflow: hidden;
   font-family: monospace;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
 .dash-header {
@@ -869,7 +876,7 @@ img {
   height: 200px;
   padding: 20px;
   overflow-y: hidden;
-  background: #000;
+  background: #0f172a;
   font-size: 0.85rem;
   color: #a5d6ff;
   line-height: 1.6;
@@ -1035,6 +1042,27 @@ img {
   .section-padding { padding: 80px 40px; }
   #hero { padding: 0 40px; }
 
+  /* H E A D E R - switch to mobile early to avoid overlap */
+  #header { padding: 15px 20px; }
+  #header .icons #bar { display: block; }
+  .btn-nav { display: none; }
+
+  #navbar {
+    position: fixed;
+    top: 60px;
+    right: -100%;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(10px);
+    width: 100%;
+    height: calc(100vh - 60px);
+    padding: 40px 0;
+    flex-direction: column;
+    align-items: center;
+    transition: 0.5s;
+    z-index: 999;
+  }
+  #navbar.active { right: 0; }
+
   .vibe-container {
     flex-direction: column;
     text-align: center;
@@ -1054,27 +1082,6 @@ img {
 @media (max-width: 768px) {
   .section-padding { padding: 60px 20px; }
   .section-header h2 { font-size: 2rem; }
-
-  /* H E A D E R */
-  #header { padding: 15px 20px; }
-  #header .icons #bar { display: block; }
-  .btn-nav { display: none; } /* Hide start project btn in nav on mobile to save space */
-
-  #navbar {
-    position: fixed;
-    top: 60px;
-    right: -100%;
-    background: rgba(10, 10, 10, 0.95);
-    backdrop-filter: blur(10px);
-    width: 100%;
-    height: calc(100vh - 60px);
-    padding: 40px 0;
-    flex-direction: column;
-    align-items: center;
-    transition: 0.5s;
-    z-index: 999;
-  }
-  #navbar.active { right: 0; }
 
   /* H E R O */
   #hero { padding: 0 20px; }

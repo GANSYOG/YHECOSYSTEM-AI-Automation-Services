@@ -44,7 +44,7 @@ function initHero3D() {
   // Center Core (YH AI CORE)
   const coreGeometry = new THREE.IcosahedronGeometry(2, 1);
   const coreMaterial = new THREE.MeshBasicMaterial({
-    color: 0x00ffcc,
+    color: 0x0ea5e9,
     wireframe: true,
     transparent: true,
     opacity: 0.8
@@ -55,10 +55,10 @@ function initHero3D() {
   // Core Glow (simple particle)
   const glowGeo = new THREE.SphereGeometry(2.5, 32, 32);
   const glowMat = new THREE.MeshBasicMaterial({
-    color: 0x00ffcc,
+    color: 0x0ea5e9,
     transparent: true,
     opacity: 0.1,
-    blending: THREE.AdditiveBlending
+    blending: THREE.NormalBlending
   });
   const glow = new THREE.Mesh(glowGeo, glowMat);
   ecosystemGroup.add(glow);
@@ -69,11 +69,11 @@ function initHero3D() {
   const nodes = [];
 
   const nodeGeo = new THREE.SphereGeometry(0.4, 16, 16);
-  const nodeMat = new THREE.MeshBasicMaterial({ color: 0xffffff });
+  const nodeMat = new THREE.MeshBasicMaterial({ color: 0x0f172a });
 
   // Lines material
   const lineMat = new THREE.LineBasicMaterial({
-    color: 0x00ffcc,
+    color: 0x0ea5e9,
     transparent: true,
     opacity: 0.3
   });
