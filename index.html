@@ -13,119 +13,338 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
     <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   </head>
-  <body>
+  <body class="dark-theme">
     <!-- H E A D E R -->
     <section id="header">
       <a href="#" class="logo">YH EcoSystem</a>
 
       <ul id="navbar">
-        <li><a href="#hero" class="active">Home</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#about">About</a></li>
+        <li><a href="#ecosystem" class="active">Ecosystem</a></li>
+        <li><a href="#solutions">Solutions</a></li>
+        <li><a href="#ai-agents">AI Agents</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
 
       <div class="icons">
-        <i class="fa-solid fa-circle-half-stroke" id="theme"></i>
+        <a href="#contact" class="btn-nav">START PROJECT &rarr;</a>
+        <i class="fa-solid fa-circle-half-stroke" id="theme" style="display:none;"></i>
         <i class="fa-solid fa-bars" id="bar"></i>
       </div>
     </section>
     <!-- H E R O -->
     <section id="hero">
-      <div class="text">
-        <h1>Your Vision, Our Code</h1>
-        <p>
-          From Smart Homes to Smart Ads - YH EcoSystem does it all. We provide
-          intelligent automation and AI solutions for smart homes, businesses,
-          and custom software development.
-        </p>
-        <a href="#contact" class="btn">Get Started</a>
-      </div>
-      <div class="img">
-        <img
-          src="https://user-gen-media-assets.s3.amazonaws.com/gemini_images/09c045ad-c1b2-49dc-aec3-871ccf4497d0.png"
-          alt="AI Neural Network"
-        />
+      <div id="hero-canvas-container"></div>
+      <div class="hero-content">
+        <h1>BUILD SMART.<br>AUTOMATE EVERYTHING.</h1>
+        <p>YH EcoSystem builds AI agents, automation systems, software and intelligent spaces for people and businesses.</p>
+        <div class="hero-btns">
+          <a href="#contact" class="btn primary-btn">START A PROJECT &rarr;</a>
+          <a href="#ecosystem" class="btn secondary-btn">EXPLORE ECOSYSTEM</a>
+        </div>
       </div>
     </section>
-    <!-- S E R V I C E S -->
-    <section id="services">
-      <div class="text">
-        <h1>Our Services</h1>
-        <p>
-          We offer a wide range of services to meet your needs. Here are some of
-          our most popular services.
-        </p>
+    <!-- E C O S Y S T E M -->
+    <section id="ecosystem" class="section-padding">
+      <div class="section-header">
+        <h2>ONE ECOSYSTEM. MANY SYSTEMS.</h2>
       </div>
 
-      <div class="container">
-        <div class="box">
-          <img
-            src="https://pplx-res.cloudinary.com/image/upload/v1758534550/pplx_project_search_images/58a7e5fea361949066599a0f0577fe817c3d257e.png"
-            alt="AI Services"
-          />
-          <div class="info">
-            <h1>AI Services</h1>
-            <p>
-              Bespoke Apps & Software (Vibe Coding) development, Custom GPT
-              Agents, AI Powered Content, and AR/VR Solutions.
-            </p>
-          </div>
-          <a href="#contact" class="btn">Get Started</a>
+      <div class="ecosystem-map">
+        <div class="eco-center">
+          <div class="eco-node-center">YH ECOSYSTEM</div>
         </div>
-        <div class="box">
-          <img
-            src="https://pplx-res.cloudinary.com/image/upload/v1756201953/pplx_project_search_images/75a67077eff910438262ec1bd14861dedcd603b1.png"
-            alt="Home Automation"
-          />
-          <div class="info">
-            <h1>Home Automation</h1>
-            <p>
-              Fully smart home automation for Hall, Bedroom, Kitchen & Bathroom.
-              Control everything from lights to appliances.
-            </p>
+
+        <div class="eco-modules">
+          <div class="eco-module" onclick="openEcoPanel('ai')">
+            <i class="fa-solid fa-brain"></i>
+            <span>AI</span>
           </div>
-          <a href="#contact" class="btn">Get Started</a>
+          <div class="eco-module" onclick="openEcoPanel('automation')">
+            <i class="fa-solid fa-gears"></i>
+            <span>AUTOMATION</span>
+          </div>
+          <div class="eco-module" onclick="openEcoPanel('software')">
+            <i class="fa-solid fa-code"></i>
+            <span>SOFTWARE</span>
+          </div>
+          <div class="eco-module" onclick="openEcoPanel('smart')">
+            <i class="fa-solid fa-house-signal"></i>
+            <span>SMART SPACES</span>
+          </div>
+          <div class="eco-module" onclick="openEcoPanel('creative')">
+            <i class="fa-solid fa-palette"></i>
+            <span>CREATIVE AI</span>
+          </div>
+          <div class="eco-module" onclick="openEcoPanel('mobility')">
+            <i class="fa-solid fa-car-bolt"></i>
+            <span>MOBILITY</span>
+          </div>
         </div>
-        <div class="box">
-          <img
-            src="https://user-gen-media-assets.s3.amazonaws.com/gemini_images/09c045ad-c1b2-49dc-aec3-871ccf4497d0.png"
-            alt="Business Automation"
-          />
-          <div class="info">
-            <h1>Business Automation</h1>
-            <p>
-              Smarter Spaces, Smarter Business. Automated equipment, dynamic
-              HVAC & lighting systems, and tailored solutions.
-            </p>
-          </div>
-          <a href="#contact" class="btn">Get Started</a>
+
+        <div id="eco-panel" class="glass-panel eco-info-panel hidden">
+          <h3 id="eco-panel-title"></h3>
+          <ul id="eco-panel-list"></ul>
+          <button onclick="closeEcoPanel()" class="btn-close">&times;</button>
         </div>
       </div>
     </section>
-    <!-- A B O U T -->
-    <section id="about">
-      <div class="text">
-        <h1>The YH Advantage</h1>
-        <p>
-          We provide a unified 360° tech ecosystem that is secure, energy
-          efficient, and fully customizable. Our solutions are affordable,
-          scalable, and future-ready.
-        </p>
-        <a href="#contact" class="btn">Get Started</a>
-      </div>
-      <div class="img">
-        <img
-          src="https://user-gen-media-assets.s3.amazonaws.com/gemini_images/09c045ad-c1b2-49dc-aec3-871ccf44-97d0.png"
-          alt="YH Advantage"
-        />
+
+    <!-- S O L U T I O N S   (SERVICES) -->
+    <section id="solutions" class="section-padding bg-alt">
+      <div class="solutions-grid">
+        <div class="solution-card glass-panel">
+          <i class="fa-solid fa-network-wired sol-icon"></i>
+          <h3>01 &mdash; AI SYSTEMS</h3>
+          <p>Custom agents, tools, and business intelligence.</p>
+          <a href="#contact" class="explore-link">EXPLORE &rarr;</a>
+        </div>
+        <div class="solution-card glass-panel">
+          <i class="fa-solid fa-robot sol-icon"></i>
+          <h3>02 &mdash; BUSINESS AUTOMATION</h3>
+          <p>Workflow, marketing, and communication automation.</p>
+          <a href="#contact" class="explore-link">EXPLORE &rarr;</a>
+        </div>
+        <div class="solution-card glass-panel">
+          <i class="fa-brands fa-app-store-ios sol-icon"></i>
+          <h3>03 &mdash; SOFTWARE & APPS</h3>
+          <p>Web apps, mobile apps, and SaaS platforms.</p>
+          <a href="#contact" class="explore-link">EXPLORE &rarr;</a>
+        </div>
+        <div class="solution-card glass-panel">
+          <i class="fa-solid fa-building-circle-check sol-icon"></i>
+          <h3>04 &mdash; SMART SPACES</h3>
+          <p>Home, office, and smart energy systems.</p>
+          <a href="#contact" class="explore-link">EXPLORE &rarr;</a>
+        </div>
+        <div class="solution-card glass-panel">
+          <i class="fa-solid fa-wand-magic-sparkles sol-icon"></i>
+          <h3>05 &mdash; CREATIVE AI</h3>
+          <p>AI content, images, video, and visualization.</p>
+          <a href="#contact" class="explore-link">EXPLORE &rarr;</a>
+        </div>
+        <div class="solution-card glass-panel">
+          <i class="fa-solid fa-laptop-code sol-icon"></i>
+          <h3>06 &mdash; VIBE CODING</h3>
+          <p>Rapid idea-to-product development.</p>
+          <a href="#contact" class="explore-link">EXPLORE &rarr;</a>
+        </div>
       </div>
     </section>
+    <!-- H O W   I T   W O R K S -->
+    <section id="how-it-works" class="section-padding">
+      <div class="section-header">
+        <h2>HOW YH WORKS</h2>
+      </div>
+      <div class="process-wrapper">
+        <div class="process-step">
+          <div class="step-icon glass-panel"><i class="fa-regular fa-lightbulb"></i></div>
+          <h4>IDEA</h4>
+          <p>Tell us what needs to happen.</p>
+        </div>
+        <div class="step-connector"><i class="fa-solid fa-arrow-right"></i></div>
+        <div class="process-step">
+          <div class="step-icon glass-panel"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+          <h4>ANALYZE</h4>
+          <p>Find the best system.</p>
+        </div>
+        <div class="step-connector"><i class="fa-solid fa-arrow-right"></i></div>
+        <div class="process-step">
+          <div class="step-icon glass-panel"><i class="fa-solid fa-hammer"></i></div>
+          <h4>BUILD</h4>
+          <p>Create the software / AI / automation.</p>
+        </div>
+        <div class="step-connector"><i class="fa-solid fa-arrow-right"></i></div>
+        <div class="process-step">
+          <div class="step-icon glass-panel"><i class="fa-solid fa-link"></i></div>
+          <h4>AUTOMATE</h4>
+          <p>Connect everything.</p>
+        </div>
+        <div class="step-connector"><i class="fa-solid fa-arrow-right"></i></div>
+        <div class="process-step">
+          <div class="step-icon glass-panel"><i class="fa-solid fa-rocket"></i></div>
+          <h4>DEPLOY</h4>
+          <p>Put it into real-world operation.</p>
+        </div>
+        <div class="step-connector"><i class="fa-solid fa-arrow-right"></i></div>
+        <div class="process-step">
+          <div class="step-icon glass-panel"><i class="fa-solid fa-arrow-trend-up"></i></div>
+          <h4>SCALE</h4>
+          <p>Improve and expand.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- A I   A G E N T S -->
+    <section id="ai-agents" class="section-padding bg-alt">
+      <div class="section-header">
+        <h2>MEET THE YH AGENT NETWORK</h2>
+      </div>
+      <div class="agents-container">
+        <div class="agents-orbit" id="agents-orbit-container">
+          <!-- Handled by CSS/JS animation -->
+          <div class="central-core glass-panel">YH CORE</div>
+          <div class="agent-node a1 glass-panel">Research</div>
+          <div class="agent-node a2 glass-panel">Marketing</div>
+          <div class="agent-node a3 glass-panel">Sales</div>
+          <div class="agent-node a4 glass-panel">Content</div>
+          <div class="agent-node a5 glass-panel">CRM</div>
+          <div class="agent-node a6 glass-panel">Execution</div>
+          <div class="agent-node a7 glass-panel">Analytics</div>
+          <div class="agent-node a8 glass-panel">Support</div>
+        </div>
+        <div class="agents-text">
+          <p class="large-msg">Don’t hire another tool. Build an intelligent system.</p>
+          <a href="#contact" class="btn primary-btn mt-20">BUILD MY AI SYSTEM &rarr;</a>
+        </div>
+      </div>
+    </section>
+    <!-- A U T O M A T I O N   S H O W C A S E -->
+    <section id="automation" class="section-padding">
+      <div class="section-header">
+        <h2>SEE AUTOMATION FLOW</h2>
+      </div>
+      <div class="automation-workflow glass-panel">
+        <div class="workflow-step" id="step1">
+          <i class="fa-solid fa-message"></i>
+          <span>CLIENT MESSAGE</span>
+        </div>
+        <div class="workflow-line" id="line1"></div>
+        <div class="workflow-step" id="step2">
+          <i class="fa-solid fa-brain"></i>
+          <span>AI UNDERSTANDS</span>
+        </div>
+        <div class="workflow-line" id="line2"></div>
+        <div class="workflow-step" id="step3">
+          <i class="fa-solid fa-database"></i>
+          <span>CRM UPDATED</span>
+        </div>
+        <div class="workflow-line" id="line3"></div>
+        <div class="workflow-step" id="step4">
+          <i class="fa-solid fa-list-check"></i>
+          <span>TASK CREATED</span>
+        </div>
+        <div class="workflow-line" id="line4"></div>
+        <div class="workflow-step" id="step5">
+          <i class="fa-solid fa-pen-nib"></i>
+          <span>CONTENT GENERATED</span>
+        </div>
+        <div class="workflow-line" id="line5"></div>
+        <div class="workflow-step" id="step6">
+          <i class="fa-solid fa-envelope-circle-check"></i>
+          <span>CUSTOMER NOTIFIED</span>
+        </div>
+        <div class="workflow-line" id="line6"></div>
+        <div class="workflow-step" id="step7">
+          <i class="fa-solid fa-chart-line"></i>
+          <span>REPORT GENERATED</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- V I B E   C O D I N G -->
+    <section id="vibe-coding" class="section-padding bg-alt">
+      <div class="vibe-container">
+        <div class="vibe-text">
+          <h2 class="vibe-title">HAVE AN IDEA?<br><span>WE BUILD IT.</span></h2>
+          <p class="vibe-sub">Apps. Websites. AI tools. Dashboards. SaaS. Internal systems.</p>
+          <a href="#contact" class="btn primary-btn mt-20">TURN IDEA INTO PRODUCT &rarr;</a>
+        </div>
+        <div class="vibe-visual">
+          <div class="code-window glass-panel">
+            <div class="window-header">
+              <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+              <span class="window-title">system.js</span>
+            </div>
+            <div class="window-body">
+<pre><code><span class="kw">const</span> idea = <span class="str">"Revolutionary App"</span>;
+<span class="kw">function</span> <span class="fn">build</span>(concept) {
+  <span class="kw">return</span> <span class="fn">YHEcoSystem</span>.<span class="fn">deploy</span>(concept);
+}
+
+<span class="kw">let</span> product = <span class="fn">build</span>(idea);
+<span class="fn">console</span>.<span class="fn">log</span>(<span class="str">"System Online."</span>);
+<span class="com">// Ready to scale.</span></code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- U S E   C A S E S -->
+    <section id="use-cases" class="section-padding">
+      <div class="section-header">
+        <h2>SOLUTIONS BY INDUSTRY</h2>
+      </div>
+      <div class="use-case-grid">
+        <div class="use-case-item glass-panel">YOGA & FITNESS</div>
+        <div class="use-case-item glass-panel">RETAIL</div>
+        <div class="use-case-item glass-panel">RESTAURANTS</div>
+        <div class="use-case-item glass-panel">REAL ESTATE</div>
+        <div class="use-case-item glass-panel">EDUCATION</div>
+        <div class="use-case-item glass-panel">HEALTH & WELLNESS</div>
+        <div class="use-case-item glass-panel">CREATORS</div>
+        <div class="use-case-item glass-panel">STARTUPS</div>
+        <div class="use-case-item glass-panel">SMALL BUSINESS</div>
+      </div>
+    </section>
+
+    <!-- L I V E   V I S U A L I Z E R -->
+    <section id="live-visualizer" class="section-padding bg-alt">
+      <div class="section-header">
+        <h2>SEE THE SYSTEM WORK</h2>
+      </div>
+      <div class="dashboard-wrapper glass-panel">
+        <div class="dash-header">
+          <div class="status-indicator">
+            <span class="pulse-dot"></span> SYSTEM STATUS: ONLINE
+          </div>
+          <div class="time" id="dash-time">00:00:00</div>
+        </div>
+        <div class="dash-grid">
+          <div class="dash-stat">
+            <h4 id="stat-agents">12</h4>
+            <span>ACTIVE AI AGENTS</span>
+          </div>
+          <div class="dash-stat">
+            <h4 id="stat-automations">48</h4>
+            <span>RUNNING AUTOMATIONS</span>
+          </div>
+          <div class="dash-stat">
+            <h4 id="stat-workflows">126</h4>
+            <span>WORKFLOWS</span>
+          </div>
+          <div class="dash-stat highlight">
+            <h4 id="stat-tasks">8,420</h4>
+            <span>TASKS COMPLETED</span>
+          </div>
+        </div>
+        <div class="dash-logs" id="dash-logs">
+          <!-- Logs injected by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- F I N A L   C T A -->
+    <section id="final-cta" class="section-padding">
+      <div class="cta-content">
+        <h2>WHAT SHOULD WE AUTOMATE?</h2>
+        <div class="cta-buttons">
+          <a href="#contact" class="btn primary-btn">BUILD AN AI AGENT</a>
+          <a href="#contact" class="btn primary-btn">AUTOMATE MY BUSINESS</a>
+          <a href="#contact" class="btn primary-btn">BUILD MY APP</a>
+        </div>
+        <p class="cta-sub">Tell us the problem. YH builds the system.</p>
+      </div>
+    </section>
+
     <!-- C O N T A C T -->
     <section id="contact">
       <div class="text">
-        <h1>Ready to Get Smart?</h1>
+        <h1>Let's Connect</h1>
         <p>
           Contact us today to learn more about our services and how we can help
           you achieve your goals.
